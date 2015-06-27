@@ -1,0 +1,47 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#">Home</a></li>
+        <li><a ng-href="#">About</a></li>
+        <li><a ng-href="#">Contact</a></li>
+    </ul>
+    <h3 class="text-muted">Cab Share Service</h3>
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-6">
+        <input class="form-control" type="text" id="source" placeholder="Enter Source" ng-model="autocomplete"
+               class="form-control"
+               ng-autocomplete options="options_source" details="details_source"/>
+
+        <input class="form-control" type="text" id="destination" placeholder="Enter Destination"
+               ng-model="autocomplete2" class="form-control"
+               ng-autocomplete options="options_destination" details="details_destination"/>
+
+        <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened"
+                   min-date="minDate"
+                   max-date="'2015-06-22'" datepicker-options="dateOptions"
+                   ng-required="true" close-text="Close"/>
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)">
+                <i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+        <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep"
+                    show-meridian="false"></timepicker>
+
+        <hr/>
+        <button type="button" class="btn btn-primary pull-right">Search</button>
+    </div>
+    <div class="col-md-6">
+
+        <google-map center="map.center" zoom="map.zoom"></google-map>
+    </div>
+</div>
+
+
+<div class="footer">
+    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>
